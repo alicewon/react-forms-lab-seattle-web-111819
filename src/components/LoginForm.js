@@ -10,12 +10,16 @@ class LoginForm extends React.Component {
     };
   }
 
+
+  // saving new values with this function
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
+
+  // checking for empty fields
   handleSubmit = event => {
     event.preventDefault()
     if(!this.state.username || !this.state.password) return
@@ -35,6 +39,7 @@ class LoginForm extends React.Component {
             name="username" 
             type="text" 
             value={this.state.username}
+            // value makes this a controlled event
             onChange={this.handleChange}/>
           </label>
         </div>
